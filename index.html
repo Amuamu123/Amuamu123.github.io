@@ -85,6 +85,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Babel 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在现有环境执行</p>
+<p>reverse() 方法用于颠倒数组中元素的顺序。<br>join() 方法用于把数组中的所有元素放入一个字符串。</p>
+<p>在vue中，有computed和method两种属性，皆可定义方法，不同的是<br>computed只有在函数所依赖的数据发送变化时，才会重新取值。<br>若没有变化，computed不会更新，所以不必要每次都调用。</p>
+<p>method在重新渲染的时候总是再次实行。</p>
+<p>###为什么我们需要将依赖数据缓存起来？###<br>假设一种场景，我们有一个高性能开销(expensive)的 computed 属性 A，<br>在 computed 属性的 getter 函数内部，需要遍历循环一个巨大数组，并进行大量计算。<br>然后还有其他 computed 属性直接或间接依赖于 A。<br>如果没有缓存，我们将不可避免地多次执行 A 的 getter 函数，<br>这远多余实际需要执行的次数！然而在某些场景下，<br>你可能不希望有缓存，请使用 method 方法替代。</p>
 
       
     </div>
